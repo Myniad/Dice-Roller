@@ -13,9 +13,16 @@ bool runProgram = true;
 int count = 0;
 int dnd1 = 0;
 int dnd2 = 0;
-while (int.TryParse(Console.ReadLine(), out diceSide) == false) // or put ! before int.TryParse for ==false
-{
-    Console.WriteLine("Not a number. Try again");
+while(diceSide <=0) {
+
+    while (int.TryParse(Console.ReadLine(), out diceSide) == false) // or put ! before int.TryParse for ==false
+    {
+        Console.WriteLine("Not a number. Try again");
+    }
+    if(diceSide <= 0)
+    {
+        Console.WriteLine("Number too low.");
+    }
 }
 //Console.WriteLine(diceSide);
 //while (true)
@@ -38,7 +45,7 @@ while (runProgram)
     }
     while (true)
     {
-        Console.Write("\nWould you like to roll again? (y/n)");
+        Console.Write("\nWould you like to roll again? (y/n) ");
         string choice = Console.ReadLine().ToLower().Trim();
         if (choice == "n")
         {
